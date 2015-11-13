@@ -1,0 +1,23 @@
+// @font-face{
+//   font-family: 'Avenir-Book';
+//   src:url('/assets/styles/fonts/Avenir-Book.eot');
+//   src: local("☺"),
+//           url('/assets/styles/fonts/Avenir-Book.woff') format('woff'),
+//           url('/assets/styles/fonts/Avenir-Book.ttf') format('truetype'),
+//           url('/assets/styles/fonts/Avenir-Book.svg') format('svg');
+//   font-weight:normal;
+//   font-style:normal;
+// }
+
+
+@mixin font ($type:"regular") {
+	$alternative: sans-serif, Arial, Verdana;
+  @if $type == "regular"{
+    font-family: 'Avenir-Book', $alternative;
+    font-weight: 100;
+  }
+}
+
+
+
+

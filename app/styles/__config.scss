@@ -1,0 +1,15 @@
+
+$screen-tablet: 500px;
+$screen-desktop-small: 950px;
+$screen-desktop: 1200px;
+$container: $screen-desktop;
+$max-page-width: 1600px;
+
+// Changing Susy default global settings
+$susy: (
+	columns: 12,
+	container: $container,
+	global-box-sizing: border-box,
+	gutters: 0
+);
+

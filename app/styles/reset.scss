@@ -1,0 +1,396 @@
+//colors
+$black: #000;
+$color_celeste_approx: #ccc;
+
+//fonts
+$font_0: sans-serif;
+$font_1: monospace;
+
+//@extend-elements
+//original selectors
+//html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary
+%extend_1 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+//original selectors
+//sub, sup
+%extend_2 {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+//original selectors
+//.clearfix:before, .clearfix:after
+%extend_3 {
+	content: "\0020";
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+
+
+html {
+	@extend %extend_1;
+	overflow-y: scroll;
+}
+body {
+	@extend %extend_1;
+	div {
+		@extend %extend_1;
+	}
+}
+span {
+	@extend %extend_1;
+}
+object {
+	@extend %extend_1;
+	max-width: 100%;
+}
+iframe {
+	@extend %extend_1;
+}
+h1 {
+	@extend %extend_1;
+}
+h2 {
+	@extend %extend_1;
+}
+h3 {
+	@extend %extend_1;
+}
+h4 {
+	@extend %extend_1;
+}
+h5 {
+	@extend %extend_1;
+}
+h6 {
+	@extend %extend_1;
+}
+p {
+	@extend %extend_1;
+}
+blockquote {
+	@extend %extend_1;
+	quotes: none;
+	&:before {
+		content: '';
+		content: none;
+	}
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+pre {
+	@extend %extend_1;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+	word-wrap: break-word;
+	font-family: $font_1, $font_0;
+}
+abbr {
+	@extend %extend_1;
+}
+address {
+	@extend %extend_1;
+}
+cite {
+	@extend %extend_1;
+}
+code {
+	@extend %extend_1;
+	font-family: $font_1, $font_0;
+}
+del {
+	@extend %extend_1;
+	text-decoration: line-through;
+}
+dfn {
+	@extend %extend_1;
+}
+em {
+	@extend %extend_1;
+}
+img {
+	@extend %extend_1;
+}
+ins {
+	@extend %extend_1;
+}
+kbd {
+	@extend %extend_1;
+	font-family: $font_1, $font_0;
+}
+q {
+	@extend %extend_1;
+	quotes: none;
+	&:before {
+		content: '';
+		content: none;
+	}
+	&:after {
+		content: '';
+		content: none;
+	}
+}
+samp {
+	@extend %extend_1;
+	font-family: $font_1, $font_0;
+}
+small {
+	@extend %extend_1;
+	font-size: 85%;
+}
+strong {
+	@extend %extend_1;
+	font-weight: bold;
+}
+sub {
+	@extend %extend_1;
+	@extend %extend_2;
+	bottom: -0.25em;
+}
+sup {
+	@extend %extend_1;
+	@extend %extend_2;
+	top: -0.5em;
+}
+var {
+	@extend %extend_1;
+}
+b {
+	@extend %extend_1;
+}
+i {
+	@extend %extend_1;
+}
+dl {
+	@extend %extend_1;
+}
+dt {
+	@extend %extend_1;
+}
+dd {
+	@extend %extend_1;
+}
+ol {
+	@extend %extend_1;
+}
+ul {
+	@extend %extend_1;
+	list-style: none;
+}
+li {
+	@extend %extend_1;
+}
+fieldset {
+	@extend %extend_1;
+}
+form {
+	@extend %extend_1;
+}
+label {
+	@extend %extend_1;
+	cursor: pointer;
+}
+legend {
+	@extend %extend_1;
+}
+table {
+	@extend %extend_1;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: inherit;
+	font: 100%;
+}
+caption {
+	@extend %extend_1;
+}
+tbody {
+	@extend %extend_1;
+}
+tfoot {
+	@extend %extend_1;
+}
+thead {
+	@extend %extend_1;
+}
+tr {
+	@extend %extend_1;
+}
+th {
+	@extend %extend_1;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+td {
+	@extend %extend_1;
+	font-weight: normal;
+	vertical-align: top;
+	vertical-align: top;
+	img {
+		vertical-align: top;
+	}
+}
+article {
+	@extend %extend_1;
+	display: block;
+}
+aside {
+	@extend %extend_1;
+	display: block;
+}
+figure {
+	@extend %extend_1;
+	display: block;
+}
+footer {
+	@extend %extend_1;
+	display: block;
+}
+header {
+	@extend %extend_1;
+	display: block;
+}
+menu {
+	@extend %extend_1;
+}
+nav {
+	@extend %extend_1;
+	display: block;
+}
+section {
+	@extend %extend_1;
+	display: block;
+}
+time {
+	@extend %extend_1;
+}
+mark {
+	@extend %extend_1;
+}
+audio {
+	@extend %extend_1;
+}
+video {
+	@extend %extend_1;
+}
+details {
+	@extend %extend_1;
+	display: block;
+}
+summary {
+	@extend %extend_1;
+	display: block;
+}
+* {
+	//Instead of the line below you could use @includebox-sizing($bs)
+	box-sizing: border-box;
+	&:before {
+		//Instead of the line below you could use @includebox-sizing($bs)
+		box-sizing: border-box;
+	}
+	&:after {
+		//Instead of the line below you could use @includebox-sizing($bs)
+		box-sizing: border-box;
+	}
+}
+embed {
+	max-width: 100%;
+}
+a {
+	&, &:hover, &:focus, &:active, &:visited {
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent;
+		text-decoration: none;
+		outline: none;
+	}
+}
+abbr[title] {
+	border-bottom: 1px dotted $black;
+	cursor: help;
+}
+dfn[title] {
+	border-bottom: 1px dotted $black;
+	cursor: help;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid $color_celeste_approx;
+	margin: 1em 0;
+	padding: 0;
+}
+input {
+	vertical-align: middle;
+	font: 99% $font_0;
+	margin: 0;
+}
+select {
+	vertical-align: middle;
+	font: 99% $font_0;
+	margin: 0;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+	vertical-align: bottom;
+}
+textarea {
+	font: 99% $font_0;
+	margin: 0;
+}
+input[type=button] {
+	cursor: pointer;
+	width: auto;
+	overflow: visible;
+}
+input[type=submit] {
+	cursor: pointer;
+}
+input[type=file] {
+	cursor: pointer;
+}
+button {
+	cursor: pointer;
+	margin: 0;
+	width: auto;
+	overflow: visible;
+}
+
+*{
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+html,
+body {
+	font-size: 16px;
+	overflow-x: hidden;
+    &, body > main, body > main > section {
+	    width: 100%;
+	}
+	&, body > main {
+    	//height: 100%;
+	}
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+

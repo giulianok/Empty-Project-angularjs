@@ -1,0 +1,10 @@
+@mixin sh-font($variant:normal, $line-height:normal, $family:Arial, $weight:normal, $style:normal, $size:medium){
+    font: $style $variant $weight $size/$line-height $family;
+}
+
+@mixin sh-background($color: transparent, $image: none, $position: center center, $repeat: repeat, $attachment: fixed){
+    @if $image != 'none' {
+    	$image: url('#{$image}');
+    }
+    background: $color $image $repeat $attachment $position;
+}

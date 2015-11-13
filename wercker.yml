@@ -1,0 +1,70 @@
+box: wercker/nodejs
+build:
+    steps:
+        - script:
+            name: install latest npm
+            code: sudo npm install -g npm@latest
+        - script: 
+            name: clean npm cache
+            code: sudo npm cache clean
+        - script: 
+            name: install compass
+            code: sudo gem install compass --no-ri --no-rdoc
+        - script: 
+            name: install susy
+            code: sudo gem install susy --no-ri --no-rdoc
+        - script: 
+            name: install breakpoint
+            code: sudo gem install breakpoint --no-ri --no-rdoc
+        - script: 
+            name: install sass-globbing
+            code: sudo gem install sass-globbing --no-ri --no-rdoc
+        - script:
+            name: install bower globally
+            code: sudo npm install -g bower
+        - script:
+            name: install gulp globally
+            code: sudo npm install -g gulp
+        - script: 
+            name: install gulp locally
+            code: sudo npm install gulp
+        - script:
+            name: make sure node_modules folder has permissions
+            code: |
+                sudo chmod 777 -R $WERCKER_SOURCE_DIR/node_modules/
+                sudo chmod 777 -R /home/ubuntu/.npm/
+        - script:
+            name: install node modules
+            code: sudo npm install
+        - script:
+            name: install bower components
+            code: bower install --force-latest
+        - script: 
+            name: run the gulp build
+            code: gulp dist
+        - script:
+            name: show output 
+            code: ls -al public/
+deploy:
+    steps:
+        - script:
+            name: install gulp globally
+            code: sudo npm install -g gulp
+        - script:
+            name: install sftp plugin
+            code: sudo npm install gulp-sftp
+        - script:
+            name: install gulp-if
+            code: sudo npm install gulp-if
+        - script:
+            name: show output 
+            code: ls -al public/            
+        - create-file:
+            name: write ftp credentials to file system
+            filename: $WERCKER_SOURCE_DIR/.ftppass
+            content: $SFTP_CREDENTIALS
+            overwrite: true
+            hide-from-log: true
+        - script:
+            name: run the deployment
+            code: gulp deploy:$SFTP_ENVIRONMENT

@@ -1,0 +1,58 @@
+doctype html
+html(ng-app="EmptyApp")
+	head
+		title(ng-bind="page.title") Empty Project
+
+		//- base(href="/")
+
+		include _includes/metas.jade
+
+		link(href='//fonts.googleapis.com/css?family=Homemade+Apple', rel='stylesheet', type='text/css')
+
+		// build:main=css styles/main.min.css
+		link(href="styles/reset.css", rel="stylesheet")
+		link(href="styles/main.css", rel="stylesheet")
+		// endbuild
+
+		script.
+			window.prerenderReady = false;
+
+		// remove
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.31.2/es6-sham.min.js")
+		// endRemove
+
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js")
+
+		// build:vendor=js scripts/vendor.min.js
+		script(src="bower_components/angular-ui-router.js")
+		script(src="bower_components/angular-animate.js")
+		// endbuild
+
+
+	body
+
+		include _includes/analytics.jade
+		
+		<!--[if lt IE 8]>
+		p.browsehappy
+			| You are using an <strong>outdated</strong> browser.
+			| Please <a href="http://browsehappy.com/">upgrade your browser</a>
+			| to improve your experience.
+		<![endif]-->
+
+
+		main(role="main", ui-view, autoscroll="true")
+			
+
+		// build:app=js scripts/app.min.js
+		script(src='scripts/components/resize.js')
+		script(src='scripts/app.js')
+		script(src='scripts/routes.js')
+		// inject:js
+		// endinject
+		// endbuild
+
+
+
+

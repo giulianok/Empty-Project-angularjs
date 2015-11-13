@@ -1,0 +1,23 @@
+# Logs
+**/logs
+**/*.log
+
+# Dependency directory
+**/node_modules
+**/bower_components
+
+# Webstorm files
+.idea
+
+# Distribution folder
+dist
+public
+
+# Temp Directories
+**/.sass-cache
+**/.sass-cache/*
+.tmp/
+test/
+
+# Ignore
+**/wordpress/wp-content/uploads/*
